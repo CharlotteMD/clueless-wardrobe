@@ -1,0 +1,15 @@
+projects:
+  Clueless Wardrobe v1:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        region: eu-west-2
+        apiId: ukg47py7djb5zjb2jjiholfn5i
+        maxDepth: 2
