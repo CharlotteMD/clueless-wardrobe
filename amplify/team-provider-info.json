@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-clueless-dev-133711-authRole",
+      "UnauthRoleArn": "arn:aws:iam::185506124233:role/amplify-clueless-dev-133711-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::185506124233:role/amplify-clueless-dev-133711-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-clueless-dev-133711-deployment",
+      "UnauthRoleName": "amplify-clueless-dev-133711-unauthRole",
+      "StackName": "amplify-clueless-dev-133711",
+      "StackId": "arn:aws:cloudformation:eu-west-2:185506124233:stack/amplify-clueless-dev-133711/c37430f0-7863-11ec-b753-0a8c4ee2d0a8",
+      "AmplifyAppId": "d2g3zvgowp1nki"
+    },
+    "categories": {
+      "auth": {
+        "clueless9cac6de7": {}
+      }
+    }
+  }
+}
