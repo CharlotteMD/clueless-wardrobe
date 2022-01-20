@@ -17,7 +17,7 @@ function App({ signOut, user }) {
     <div className="App">
       <h1>Hello {user.attributes.email}</h1>
       <button onClick={signOut}>Sign out</button>
-      <ApiEntry token ={token}/>
+      <ApiEntry token={token}/>
     </div>
   );
 }

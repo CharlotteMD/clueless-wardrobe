@@ -31,12 +31,9 @@ const { loading, error, data } = useQuery(WARDROBE_LIST);
 if (loading) return <p>Loading...</p>;
 if (error) return <p>Error...</p>;
 
-console.log(data);
-
     return data.listCluelessWardrobeV1S.items.map(({                 
         itemId,
         itemName,
-        itemType,
         lastWorn,
         mainColor,
         otherColors 

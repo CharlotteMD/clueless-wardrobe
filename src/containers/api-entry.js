@@ -5,6 +5,7 @@ import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import appSyncConfig from "./../aws-exports";
 import DataEntry from "./data-entry";
+import ApiPractise from "./api-practise";
 
 const url = appSyncConfig.aws_appsync_graphqlEndpoint;
 const region = appSyncConfig.aws_appsync_region;
@@ -32,7 +33,8 @@ const ApiEntry = ({ token }) => {
 
     return (
         <ApolloProvider client={client}>
-            <DataEntry/>
+            {/* <DataEntry/> */}
+            <ApiPractise />
         </ApolloProvider>
     )
 }
