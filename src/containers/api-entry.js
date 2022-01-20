@@ -1,23 +1,15 @@
 import { createAuthLink } from "aws-appsync-auth-link";
 import { createSubscriptionHandshakeLink } from "aws-appsync-subscription-link";
-
 import { ApolloLink } from "apollo-link";
 import { createHttpLink } from "apollo-link-http";
-// import ApolloClient from "apollo-client";
-import { ApolloProvider, ApolloClient, InMemoryCache, gql } from '@apollo/client';
-// import { InMemoryCache } from "apollo-cache-inmemory";
-
-import { withAuthenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
-
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import appSyncConfig from "./../aws-exports";
+import DataEntry from "./data-entry";
 
 const url = appSyncConfig.aws_appsync_graphqlEndpoint;
 const region = appSyncConfig.aws_appsync_region;
 
 const httpLink = createHttpLink({ uri: url });
-
-
 
 const ApiEntry = ({ token }) => {
 
@@ -38,37 +30,9 @@ const ApiEntry = ({ token }) => {
         cache: new InMemoryCache(),
     });
 
-    const data = client
-        .query({
-            query: gql`
-            query ListCluelessWardrobeV1S(
-                $filter: TableCluelessWardrobeV1FilterInput
-                $limit: Int
-                $nextToken: String
-              ) {
-                listCluelessWardrobeV1S(
-                  filter: $filter
-                  limit: $limit
-                  nextToken: $nextToken
-                ) {
-                  items {
-                    itemId
-                    itemName
-                    itemType
-                    lastWorn
-                    mainColor
-                    otherColors
-                  }
-                  nextToken
-                }
-              }
-            `
-        })
-    .then(result => console.log(result));
-
     return (
         <ApolloProvider client={client}>
-            <h1>{data}</h1>
+            <DataEntry/>
         </ApolloProvider>
     )
 }
